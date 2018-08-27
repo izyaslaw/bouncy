@@ -1,0 +1,25 @@
+@font-face{
+	font-family: 'BigJohn';
+	src: url('../fonts/BIGJOHN.otf');
+}
+
+@font-face{
+	font-family: 'OpenSans';
+	src: url('../fonts/OpenSans.ttf');
+}
+
+@font-face{
+	font-family: 'OpenSans';
+	src: url('../fonts/OpenSansBold.ttf');
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: 'PeIcon7Stroke';
+	src: url('../fonts/Pe-icon-7-stroke.woff');
+}
+
+@font-face{
+	font-family: 'SSPL';
+	src: url('../fonts/SourceSansPro-Light.otf');
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+	<title>BOUNCY</title>
+</head>
+<body style="visibility: hidden"
+      onload="setTimeout ('document.body.style.visibility = \'visible\'', 0)">
+	<header id="head">
+		<div class="header-content">
+			<div class="logo-menu">
+				<div class="logo">
+					<h1>BOUNCY</h1>
+				</div>
+				<nav class="menu scrolling" id="nav">	
+					<ul>
+						<li class="menu-elem">
+							<a href="#hello">
+								Hello
+							</a>
+						</li>
+						<li class="menu-elem">
+							<a href="#about">
+								About
+							</a>
+						</li>
+						<li class="menu-elem">
+							<a href="#services">
+								Services
+							</a>
+						</li>
+						<li class="menu-elem">
+							<a href="#portfolio">
+								Portfolio
+							</a>
+						</li>
+						<li class="menu-elem">
+							<a href="#team">
+								Team
+							</a>
+						</li>
+						<li class="menu-elem">
+							<a href="#blog">
+								Blog
+							</a>
+						</li>
+						<li class="menu-elem">
+							<a href="#contact">
+								Contact
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="menu-button" 
+					id="menuBtn" 
+					onclick="if(menuBtn.style.right=='200px'){menuBtn.style.right='20px';nav.style.marginLeft='0'}else{menuBtn.style.right='200px';nav.style.marginLeft='-200px'}" 
+					onmouseover="l1.setAttribute('stroke-width', '5px');l2.setAttribute('stroke-width', '5px');l3.setAttribute('stroke-width', '5px');" 
+					onmouseleave="l1.setAttribute('stroke-width', '3px');l2.setAttribute('stroke-width', '3px');l3.setAttribute('stroke-width', '3px');">
+					<svg >
+						<line id="l1" x1="15" y1="19" x2="45" y2="19" stroke="white" stroke-width="3px" />
+						<line id="l2" x1="15" y1="30" x2="45" y2="30" stroke="white" stroke-width="3px" />
+						<line id="l3" x1="15" y1="41" x2="45" y2="41" stroke="white" stroke-width="3px" />
+					</svg>
+				</div>
+			</div>
+			<div class="header-text">
+				<h1>WE ARE CODE CAFE</h1>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui<br> blanditiis praesentium voluptatum</p>
+			</div>
+			<div class="header-button">
+				<div class="button-down scrolling">
+					<svg>
+						<a href="#about">
+							<circle r="20" cx="50%" cy="50%" fill="#19bd9a" />
+							<line x1="14" y1="16" x2="20" y2="22" stroke="white" stroke-width="2px" />
+							<line x1="20" y1="22" x2="26" y2="16" stroke="white" stroke-width="2px" />
+						</a>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="about-us" id="about">
+			<div class="tib-content-left">
+				<h1>THIS IS BOUNCY</h1>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui
+					blanditiis praesentium voluptatum deleniti atque corrupti quos
+					dolores et quas molestias excepturi sint occaecati cupiditate non
+					provident, similique sunt in culpa qui officia deserunt mollitia
+					animi, id est laborum et dolorum fuga. Et harum quidem rerum
+					facilis est et expedita distinctio.</p>
+				<a href="#readmore" class="btn"><p>Read More</p></a>
+			</div>
+			<div class="tib-content-right">
+				<img src="img/ipad.png" alt="">
+			</div>
+		</div>
+		<div class="details-about-us">
+			<div class="dau-content">
+				<h1>DETAILS ABOUT BOUNCY</h1>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui<br>
+				blanditiis praesentium</p>
+				<div class="dau-icons">
+					<div class="icons">
+						<div class="icon-1 active"></div>
+						<div class="icon-2"></div>
+						<div class="icon-3"></div>
+					</div>
+				</div>
+				<div class="content-head">
+					<h2>Creative Ideas</h2>
+				</div>
+				<div class="content">
+					<p>At <span class="green-span">vero</span> eos et accusamus et iusto odio dignissimos <span class="grey-span">ducimus</span> qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores </p>
+					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque <span class="grey-span">corrupti quos</span> dolores et quas molestias <span class="green-span">excepturi</span> sint occaecati cupiditate non provident, <span class="grey-span">similique</span> sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem r</p>
+				</div>
+			</div>
+		</div>
+		<div class="featured-projects">
+			<h1>FEATURED PROJECTS</h1>
+			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+			<div id="fe" class="featured-examples">
+				<div id="worksId" class="works">
+					<div id="mainWork" class="main work">
+						<div id="mainWorkRoll" class="roll">
+							<div class="first pict"></div>
+							<div class="second pict"></div>
+							<div class="third pict"></div>
+						</div>
+						<div class="works-hover">
+							<h1>SOMETHING</h1>
+						</div>
+					</div>
+					<div id="secWork" class="second work">
+						<div id="secWorkRoll" class="roll">
+							<div class="first pict"></div>
+							<div class="second pict"></div>
+						</div>
+						<div class="works-hover">
+							<h1>VINTAGE</h1>
+						</div>
+					</div>
+					<div id="trdWork" class="third work">
+						<div id="trdWorkRoll" class="roll">
+							<div class="first pict"></div>
+							<div class="second pict"></div>
+						</div>
+						<div class="works-hover">
+							<h1>BRANDING</h1>
+						</div>
+					</div>
+				</div>
+				<div class="fold-footer">
+					<div class="submit">
+						<p>At vero eos et <span>accusamus</span> et iusto odio dignissimos ducimus qui blanditiis</p>
+						<a href="#submit" class="btn"><p>Submit Now</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="services" class="services">
+			<h1>OUR SERVICES</h1>
+			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+
+		</div>
+		<svg display="none" version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+			<g transform="rotate(-90 150 150)">
+				<circle cx="150" cy="150" r="102" fill="#047378"></circle> 	 
+				<circle id="cOne" cx="150" cy="150" r="100" stroke="#19BD9A" stroke-width="5"   stroke-dasharray ="628" stroke-dashoffset="628" fill="white">
+				</circle>
+			</g> 
+		</svg>
+	</main>
+	<footer>
+		<div class="footer-logo">
+			<h1>BOUNCY</h1>
+		</div>
+		<div class="copyright">
+			<p>Copyright 2015. All rights Reserved</p>
+		</div>
+		<div class="links">
+			<a href="#fb"></a>
+			<a href="#tw"></a>
+			<a href="#li"></a>
+			<a href="#ig"></a>
+			<a href="#vi"></a>
+		</div>
+	</footer>
+	<script src="js/script.js"></script>
+</body>
+</html>
