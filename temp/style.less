@@ -1,0 +1,151 @@
+@color1: black;
+@color2: red;
+@bg: "../img/bg.png";
+
+body {
+	margin: 0;
+	// .bootstrap-border
+}
+
+.bootstrap-border {
+	.container {
+		border: 1px dashed red;
+	}
+
+	.row {
+		border: 1px dashed yellow;
+	}
+
+	.kek(@n) when (@n <= 12) {
+		.col-md-@{n} {border: 1px dashed blue;}
+		.kek(@n + 1)
+	}
+	
+	.kek(1);
+
+}
+
+.white {color:white;}
+
+header {
+	p {
+		.white
+	}
+	#headpict {
+		.opac {
+			width: 100%;
+			height: 100%;
+			background: url(@bg) no-repeat 50% 50%;
+			-webkit-background-size: cover;
+			background-size: cover;
+		}
+		.opac::after {
+			content: "";
+			display: block;
+			color: transparent;
+			background-color: black;
+			opacity: .3;
+			width: 100%;
+			height: 100%;
+		};
+	}
+	.header-content {
+		margin: auto;
+		max-width: 1170px;
+		height: 100%;
+		.logo-menu {
+			position: absolute;
+			top: 20px;
+			.logo {
+				height: 54px;
+				h1 {
+					-moz-user-select: none; 
+					-ms-user-select: none; 
+					-o-user-select: none; 
+					-webkit-user-select: none; 
+					.white;
+					vertical-align: middle;
+					margin: 0;
+					font-family: "BigJohn"
+				}
+			}
+			.menu {
+				font-family: "OpenSans";
+				ul {
+					list-style: none;
+					li {
+						text-align: center;
+						vertical-align: middle;
+						display: block;
+						a {
+							.white;
+							vertical-align: middle;
+							display: inline-block;
+							float: left;
+							padding: 10px 20px;
+							text-decoration: none;
+							font-size: 16px;
+							border: 2px solid transparent;
+							border-radius: 50px;
+							transition: .2s
+						}
+						a:hover {
+							border: 2px solid white;
+							border-radius: 50px;
+							transition: .2s
+						}
+					}
+				}
+			}
+			.menu-button {
+				svg {
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+		.header-text {
+			position: absolute;
+			text-align: center;
+			top: 45%;
+			p:first-child {
+				font-family: "SSPL";
+				font-size: 35pt;
+				letter-spacing: 10px;
+			}
+			p:last-child {
+				font-family: "OpenSans";
+				font-size: 20px;
+				letter-spacing: 2px;
+			}
+		}
+		.header-button {
+			width: 100%;
+			position: absolute;
+			bottom: 20px;
+			a {
+				font-family: "PeIcon7Stroke";
+			}
+			.button-down {
+				svg {
+					margin: auto;
+					display: block;
+					width: 40px;
+					height: 40px;
+				}
+			}
+		}
+		.row {
+			width: inherit;
+		}
+	}
+}
+
+main {
+	width: 100%;
+	.tib {
+		.tib-content {
+			
+		}
+	}
+}

@@ -27,12 +27,13 @@ p {
   margin-top: 0;
 }
 .green-span {
-  font-weight: bold;
   color: #19bd9a;
 }
 .grey-span {
-  font-weight: bold;
   color: #636971;
+}
+.bold-span {
+  font-weight: bold;
 }
 .btn {
   text-decoration: none;
@@ -126,6 +127,7 @@ header .header-content .logo-menu .menu ul li a:hover {
   }
   header .header-content .logo-menu .menu ul li {
     margin-top: 50px;
+    text-align: left;
   }
 }
 header .header-content .logo-menu .menu-button {
@@ -135,11 +137,12 @@ header .header-content .logo-menu .menu-button {
   transition: .8s;
   z-index: 100;
 }
-header .header-content .logo-menu .menu-button svg {
+header .header-content .logo-menu .menu-button .btn-menu {
   width: 60px;
   height: 60px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
-header .header-content .logo-menu .menu-button svg line {
+header .header-content .logo-menu .menu-button .btn-menu line {
   transition: .4s;
 }
 header .header-content .logo-menu .menu-button:hover {
@@ -199,6 +202,30 @@ main > div {
   flex-direction: column;
   align-items: center;
 }
+main input[type="radio"] {
+  display: none;
+}
+main input[type="radio"]:checked + .icon {
+  background-color: #19bd9a;
+}
+main .icon {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: #81868e no-repeat 50% 50%;
+  transition: .2s;
+}
+main .icon div {
+  width: 100%;
+  height: 100%;
+}
+main .icon:hover {
+  background-color: #2f3033;
+  transition: .2s;
+}
+main .icon:checked + .icon {
+  background-color: #19bd9a;
+}
 main .about-us {
   flex-direction: row;
   justify-content: space-between;
@@ -222,62 +249,67 @@ main .details-about-us {
   background-color: #f3f3f3;
   width: 100%;
 }
-main .details-about-us .dau-content {
+main .details-about-us .dau {
   max-width: 1030px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-main .details-about-us .dau-content .dau-icons {
+main .details-about-us .dau .dau-icons {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-main .details-about-us .dau-content .dau-icons .icons {
+main .details-about-us .dau .dau-icons .icons {
   width: 247px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
-main .details-about-us .dau-content .dau-icons .icons div {
-  width: 53px;
-  height: 53px;
-  margin-right: 40px;
-  display: inline-block;
+main .details-about-us .dau .dau-icons .icons .icon-1 {
+  background-image: url("../img/icons/heart.png");
 }
-main .details-about-us .dau-content .dau-icons .icons .icon-1 {
-  background: url("../img/dauicon1.png");
+main .details-about-us .dau .dau-icons .icons .icon-2 {
+  background-image: url("../img/icons/mouse.png");
+  background-position: 50% 40%;
 }
-main .details-about-us .dau-content .dau-icons .icons .icon-2 {
-  background: url("../img/dauicon2.png");
+main .details-about-us .dau .dau-icons .icons .icon-3 {
+  background-image: url("../img/icons/lamp.png");
 }
-main .details-about-us .dau-content .dau-icons .icons .icon-3 {
-  background: url("../img/dauicon3.png");
-  margin: 0;
+main .details-about-us .dau .dau-content-outer {
+  overflow: hidden;
+  width: 100%;
 }
-main .details-about-us .dau-content .content-head {
+main .details-about-us .dau .dau-content-outer #checkContent {
+  width: 300%;
+  position: relative;
+  transition: .5s;
+}
+main .details-about-us .dau .dau-content-outer #checkContent .dau-content {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+}
+main .details-about-us .dau .dau-content-outer #checkContent .dau-content .content-head {
   align-self: flex-start;
   padding-left: 20px;
 }
-main .details-about-us .dau-content .content {
+main .details-about-us .dau .dau-content-outer #checkContent .dau-content .content {
   display: flex;
   text-align: left;
   flex-wrap: nowrap;
 }
-main .details-about-us .dau-content .content p:first-child {
+main .details-about-us .dau .dau-content-outer #checkContent .dau-content .content p:first-child {
   min-width: 200px;
   max-width: 400px;
   padding-left: 20px;
   margin-right: 20px;
 }
-main .details-about-us .dau-content .content p:last-child {
+main .details-about-us .dau .dau-content-outer #checkContent .dau-content .content p:last-child {
   max-width: 500px;
   min-width: 300px;
   padding-right: 20px;
-}
-@media (max-width: 991px) {
-  main .details-about-us .dau-content .content-head {
-    align-self: center;
-    padding: 0;
-  }
 }
 main .featured-projects {
   text-align: center;
@@ -475,6 +507,155 @@ main .featured-projects .featured-examples .fold-footer .submit a p {
   main .featured-projects .featured-examples {
     width: 768px;
   }
+}
+main .services .services-main {
+  max-width: 1250px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-top: 60px;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .services .services-main .services-icons {
+  margin-right: 20px;
+}
+main .services .services-main .services-icons .icons {
+  height: 263px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .services .services-main .services-icons .icons .icon-1 {
+  background-image: url("../img/icons/tools.png");
+}
+main .services .services-main .services-icons .icons .icon-2 {
+  background-image: url("../img/icons/valik.png");
+}
+main .services .services-main .services-icons .icons .icon-3 {
+  background-image: url("../img/icons/gamepad.png");
+  background-position: 50% 40%;
+}
+main .services .services-main .services-icons .icons .icon-4 {
+  background-image: url("../img/icons/plug.png");
+}
+main .services .services-main .services-content-output {
+  overflow: hidden;
+  height: 263px;
+}
+main .services .services-main .services-content-output #servicesContent {
+  height: 400%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: .5s;
+}
+main .services .services-main .services-content-output #servicesContent .services-content {
+  max-width: 412px;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .services .services-main .services-content-output #servicesContent .services-content .services-content-header h2 {
+  margin-top: 0;
+}
+main .services .services-main .services-content-output #servicesContent .services-content .services-content-text-1 p {
+  font-size: 16px;
+}
+main .services .services-main .services-content-output #servicesContent .services-content .services-content-text-2 p {
+  margin-bottom: 0;
+}
+main .services .services-main .procents {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 40px;
+}
+main .services .services-main .procents div {
+  position: relative;
+}
+main .services .services-main .procents div p {
+  width: 100%;
+  position: relative;
+  top: -82px;
+  left: 79px;
+  color: #81868e;
+  font-size: 25pt;
+  background-color: transparent;
+}
+main .services .services-main .procents div p span {
+  font-size: 15pt;
+}
+main .services .services-main .procents div p + p {
+  font-size: 14pt;
+  position: absolute;
+  top: 144px ;
+}
+main .services .services-main .procents div p + p :nth-child(1) {
+  left: 63px;
+}
+main .services .services-main .procents div:nth-child(1) p + p {
+  left: 63px;
+}
+main .services .services-main .procents div:nth-child(2) p + p {
+  left: 50px;
+}
+main .services .services-main .procents div:nth-child(3) p + p {
+  left: 79px;
+}
+@media (max-width: 991px) {
+  main .services .services-main {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main .impressed {
+  padding: 0 40px;
+  width: 100%;
+  background: url("../img/impressedbg.png") no-repeat 50% 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+main .impressed .impressed-outer {
+  max-width: 1350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+main .impressed .impressed-outer .impressed-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 40px 0;
+  position: relative;
+  z-index: 1;
+}
+main .impressed .impressed-outer .impressed-content .head {
+  color: white;
+}
+main .impressed .impressed-outer .impressed-content .fText {
+  color: white;
+}
+main .impressed .impressed-outer .impressed-content .sText {
+  color: white;
+  text-transform: uppercase;
+}
+main .impressed .impressed-outer .impressed-monitor {
+  background: url("../img/impressedmonitor.png") no-repeat 50% 50%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  width: 400px;
+  min-width: 400px;
+  height: 327px;
+  position: relative;
+  right: 60px;
+  bottom: 40px;
+  z-index: 0;
 }
 footer {
   border-top: 1px solid red;

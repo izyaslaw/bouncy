@@ -38,13 +38,15 @@ p {
 }
 
 .green-span {
-	font-weight: bold;
 	color: #19bd9a;
 }
 
 .grey-span {
-	font-weight: bold;
 	color: #636971;
+}
+
+.bold-span {
+	font-weight: bold;
 }
 
 .btn(@color: white) {
@@ -141,6 +143,7 @@ header {
 						flex-direction: column;
 						li {
 							margin-top: 50px;
+							text-align: left;
 						}
 					}
 				}
@@ -151,10 +154,13 @@ header {
 				right: 20px;
 				transition: .8s;
 				z-index:100;
-				svg {
+				.btn-menu {
 					width: 60px;
 					height: 60px;
-					line {transition: .4s;}
+					background-color: rgba(0,0,0,.3);
+					line {
+						transition: .4s;
+					}
 				}
 			}
 			.menu-button:hover {
@@ -221,6 +227,25 @@ main {
 		flex-direction: column;
 		align-items: center;
 	}
+	input[type="radio"]{display: none};
+	input[type="radio"]:checked + .icon {
+		background-color: #19bd9a;
+	}
+	.icon {
+		div {width: 100%;height: 100%;}
+		width: 53px;
+		height: 53px;
+		border-radius: 50%;
+		background: #81868e no-repeat 50% 50%;
+		transition: .2s;
+	}
+	.icon:hover {
+		background-color: #2f3033;
+		transition: .2s;
+	}
+	.icon:checked + .icon {
+		background-color: #19bd9a;
+	}
 	.about-us {
 		flex-direction: row;
 		justify-content: space-between;
@@ -238,7 +263,7 @@ main {
 	.details-about-us {
 		background-color: #f3f3f3;
 		width: 100%;
-		.dau-content {
+		.dau {
 			max-width: 1030px;
 			display: flex;
 			flex-direction: column;
@@ -250,48 +275,53 @@ main {
 				.icons {
 					width: 247px;
 					margin: auto;
-					div {
-						width: 53px;
-						height: 53px;
-						margin-right: 40px;
-						display: inline-block;
-					}
+					display: flex;
+					justify-content: space-between;
 					.icon-1 {
-						background: url("../img/dauicon1.png");
+						background-image: url("../img/icons/heart.png");
 					}
 					.icon-2 {
-						background: url("../img/dauicon2.png");
+						background-image: url("../img/icons/mouse.png");
+						background-position: 50% 40%;
 					}
 					.icon-3 {
-						background: url("../img/dauicon3.png");
-						margin: 0;
+						background-image: url("../img/icons/lamp.png");
 					}
 				}
 			}
-			.content-head {
-				align-self: flex-start;
-				padding-left: 20px;
-			}
-			.content {
-				display: flex;
-				text-align: left;
-				flex-wrap: nowrap;
-				p:first-child {
-					min-width: 200px;
-					max-width: 400px;
-					padding-left: 20px;
-					margin-right: 20px;
-				}
-				p:last-child {
-					max-width: 500px;
-					min-width: 300px;
-					padding-right: 20px;
-				}
-			}
-			@media (max-width: 991px) {
-				.content-head {
-					align-self: center;
-					padding: 0;
+			.dau-content-outer {
+				overflow: hidden;
+				width: 100%;
+				#checkContent {
+					width: 300%;
+					position: relative;
+					transition: .5s;
+					.dau-content {
+						float: left;
+						display: flex;
+						flex-direction: column;
+						width: 33.33%;
+						.content-head {
+							align-self: flex-start;
+							padding-left: 20px;
+						}
+						.content {
+							display: flex;
+							text-align: left;
+							flex-wrap: nowrap;
+							p:first-child {
+								min-width: 200px;
+								max-width: 400px;
+								padding-left: 20px;
+								margin-right: 20px;
+							}
+							p:last-child {
+								max-width: 500px;
+								min-width: 300px;
+								padding-right: 20px;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -469,6 +499,157 @@ main {
 			}
 			@media (max-width: 992px){
 				width: 768px;
+			}
+		}
+	}
+	.services {
+		.services-main {
+			max-width: 1250px;
+			padding-left: 60px;
+			padding-right: 60px;
+			margin-top: 60px;
+			box-sizing: border-box;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			.services-icons{
+				margin-right: 20px;
+				.icons {
+					height: 263px;
+					margin: auto;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					.icon-1 {
+						background-image: url("../img/icons/tools.png");
+					}
+					.icon-2 {
+						background-image: url("../img/icons/valik.png");
+					}
+					.icon-3 {
+						background-image: url("../img/icons/gamepad.png");
+						background-position: 50% 40%;
+					}
+					.icon-4 {
+						background-image: url("../img/icons/plug.png");	
+					}
+				}
+			}
+			.services-content-output {
+				overflow: hidden;
+				height: 263px;
+				#servicesContent {
+					height: 400%;
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					transition: .5s;
+					.services-content {
+						max-width: 412px;
+						height: 25%;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						.services-content-header h2{
+							margin-top: 0;
+						}
+						.services-content-text-1 p{
+							font-size: 16px;
+						}
+						.services-content-text-2 p{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+			.procents {
+				display: flex;
+				justify-content: space-between;
+				align-self: center;
+				margin-top: 40px;
+				div {
+					position: relative;
+					svg {
+						
+					}
+					p {
+						width: 100%;
+						position: relative;
+						top: -82px;
+						left: 79px;
+						color: #81868e;
+						font-size: 25pt;
+						background-color: transparent;
+						span {
+							font-size: 15pt;
+						}
+					}
+					p + p {
+						font-size: 14pt;
+						position: absolute;
+						top:144px ;
+						:nth-child(1) {
+							left:63px;
+						}
+					}
+				}
+				div:nth-child(1) {
+					p + p {
+						left:63px;
+					}
+				}
+				div:nth-child(2) {
+					p + p {
+						left:50px;
+					}
+				}
+				div:nth-child(3) {
+					p + p {
+						left:79px;
+					}
+				}
+			}
+			@media (max-width: 991px) {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+	}
+	.impressed {
+		padding: 0 40px;
+		width: 100%;
+		background: url("../img/impressedbg.png") no-repeat 50% 50%;
+		-webkit-background-size: cover;
+		background-size: cover;
+		.impressed-outer {
+			max-width: 1350px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			.impressed-content {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				max-width: 600px;
+				margin: 40px 0;
+				position: relative;
+				z-index: 1;
+				.head {color: white;}
+				.fText {color: white;}
+				.sText {color: white; text-transform: uppercase;}
+			}
+			.impressed-monitor {
+				background: url("../img/impressedmonitor.png") no-repeat 50% 50%;
+				-webkit-background-size: 100% 100%;
+				background-size: 100% 100%;
+				width: 400px;
+				min-width: 400px;
+				height: 327px;
+				position: relative;
+				right: 60px;
+				bottom: 40px;
+				z-index: 0;
 			}
 		}
 	}
