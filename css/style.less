@@ -220,12 +220,18 @@ header::before {
 }
 
 main {
+	div {
+		box-sizing: border-box;
+	}
 	> div {
 		padding-top: 80px;
 		padding-bottom: 80px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		> p {
+			text-align:center;
+		}
 	}
 	input[type="radio"]{display: none};
 	input[type="radio"]:checked + .icon {
@@ -248,7 +254,7 @@ main {
 	}
 	.about-us {
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: center;
 		max-width: 850px;
 		margin: auto;
 		.tib-content-left {
@@ -258,6 +264,9 @@ main {
 			width: 440px;
 			padding-left: 20px;
 			a {.btn(#333b46)}
+		}
+		@media (max-width: 390px) {
+			flex-wrap: wrap;
 		}
 	}
 	.details-about-us {
@@ -333,6 +342,7 @@ main {
 		}
 	}
 	.featured-projects {
+		padding-bottom: 0;
 		text-align: center;	
 		p {
 			max-width: 420px;
@@ -414,6 +424,9 @@ main {
 					@media (max-width: 992px) {
 						width: 50%;
 					}
+					@media (max-width: 768px) {
+						width: 100%;
+					}
 					#secWorkRoll {
 						width: 200%;
 						.pict {
@@ -437,6 +450,9 @@ main {
 					}
 					@media (max-width: 992px) {
 						width: 50%;
+					}
+					@media (max-width: 768px) {
+						width: 100%;
 					}
 					#trdWorkRoll {
 						width: 200%;
@@ -468,12 +484,13 @@ main {
 			}
 			.fold-footer {
 				background: rgba(25, 189, 154, 1);
-				height: 100px;
 				.submit {
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					margin: 0;
+					padding: 20px;
+					box-sizing: border-box;
 					height: 100%;
 					width: 100%;
 					background: url("../img/featured/bg.png") no-repeat 50% 50%;
@@ -483,17 +500,29 @@ main {
 					text-decoration: none;
 					> p {
 						max-width: 1000px;
+						min-width: 260px;
+						margin: 0;
 						font-family: "OpenSans";
 						.white;
 						font-size: 16pt;
-						margin: 20px 50px 20px 20px;
+						text-align: left;
 						span {
 							font-weight: bold;
+						}
+						@media (max-width: 262px){
+							display: none;
 						}
 					}
 					a{
 						.btn(white);
-						margin-right: 20px;
+						width: 173.31px;
+						height: 40px;
+						p {
+							white-space: nowrap;
+						}
+					}
+					@media (max-width: 470px) {
+						flex-wrap: wrap;
 					}	
 				}
 			}
@@ -505,6 +534,10 @@ main {
 			}
 			@media (max-width: 992px){
 				width: 768px;
+			}
+			@media (max-width: 768px) {
+				width: 100vw;
+				min-width: 300px;
 			}
 		}
 	}
@@ -518,59 +551,73 @@ main {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
-			.services-icons{
-				margin-right: 20px;
-				.icons {
-					height: 263px;
-					margin: auto;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					.icon-1 {
-						background-image: url("../img/icons/tools.png");
-					}
-					.icon-2 {
-						background-image: url("../img/icons/valik.png");
-					}
-					.icon-3 {
-						background-image: url("../img/icons/gamepad.png");
-						background-position: 50% 40%;
-					}
-					.icon-4 {
-						background-image: url("../img/icons/plug.png");	
-					}
-				}
-			}
-			.services-content-output {
-				overflow: hidden;
-				height: 263px;
-				#servicesContent {
-					height: 400%;
-					position: relative;
-					display: flex;
-					flex-direction: column;
-					transition: .5s;
-					.services-content {
-						max-width: 412px;
-						height: 25%;
+			.icons-ans-content{
+				display: flex;
+				flex-wrap: nowrap;
+				.services-icons{
+					margin-right: 20px;
+					.icons {
+						// height: 263px;
+						height: 100%;
+						margin: auto;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-between;
-						.services-content-header h2{
-							margin-top: 0;
+						.icon-1 {
+							background-image: url("../img/icons/tools.png");
 						}
-						.services-content-text-1 p{
-							font-size: 16px;
+						.icon-2 {
+							background-image: url("../img/icons/valik.png");
 						}
-						.services-content-text-2 p{
-							margin-bottom: 0;
+						.icon-3 {
+							background-image: url("../img/icons/gamepad.png");
+							background-position: 50% 40%;
+						}
+						.icon-4 {
+							background-image: url("../img/icons/plug.png");	
+						}
+						@media (max-width: 390px) {
+							flex-direction: row;
+							width: 263px;
+							height: initial;
 						}
 					}
+				}
+				.services-content-output {
+					overflow: hidden;
+					height: 263px;
+					#servicesContent {
+						height: 400%;
+						position: relative;
+						display: flex;
+						flex-direction: column;
+						transition: .5s;
+						.services-content {
+							max-width: 412px;
+							height: 25%;
+							display: flex;
+							flex-direction: column;
+							justify-content: space-between;
+							.services-content-header h2{
+								margin-top: 0;
+							}
+							.services-content-text-1 p{
+								font-size: 16px;
+							}
+							.services-content-text-2 p{
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+				@media (max-width: 390px) {
+					flex-direction: column;
 				}
 			}
 			.procents {
 				display: flex;
-				justify-content: space-between;
+				flex-wrap: wrap;
+				justify-content: center;
 				align-self: center;
 				margin-top: 40px;
 				div {
@@ -579,7 +626,9 @@ main {
 						
 					}
 					p {
-						width: 100%;
+						width: 40px;
+						box-sizing: border-box;
+						white-space: nowrap;
 						position: relative;
 						top: -82px;
 						left: 79px;
@@ -613,6 +662,9 @@ main {
 					p + p {
 						left:79px;
 					}
+				}
+				@media (max-width: 630px) {
+					flex-direction: column;
 				}
 			}
 			@media (max-width: 991px) {
@@ -652,9 +704,11 @@ main {
 				min-width: 400px;
 				height: 327px;
 				position: relative;
-				right: 60px;
 				bottom: 40px;
 				z-index: 0;
+				@media (max-width: 600px) {
+					display: none;
+				}
 			}
 		}
 	}

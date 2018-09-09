@@ -195,12 +195,18 @@ header::before {
   width: 100%;
   height: 100%;
 }
+main div {
+  box-sizing: border-box;
+}
 main > div {
   padding-top: 80px;
   padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+main > div > p {
+  text-align: center;
 }
 main input[type="radio"] {
   display: none;
@@ -228,7 +234,7 @@ main .icon:checked + .icon {
 }
 main .about-us {
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 850px;
   margin: auto;
 }
@@ -244,6 +250,11 @@ main .about-us .tib-content-left a {
 }
 main .about-us .tib-content-left a p {
   color: #333b46;
+}
+@media (max-width: 390px) {
+  main .about-us {
+    flex-wrap: wrap;
+  }
 }
 main .details-about-us {
   background-color: #f3f3f3;
@@ -320,6 +331,7 @@ main .details-about-us .dau .dau-content-outer #checkContent .dau-content .conte
   }
 }
 main .featured-projects {
+  padding-bottom: 0;
   text-align: center;
 }
 main .featured-projects p {
@@ -415,6 +427,11 @@ main .featured-projects .featured-examples .works .main #mainWorkRoll .third {
     width: 50%;
   }
 }
+@media (max-width: 768px) {
+  main .featured-projects .featured-examples .works .second {
+    width: 100%;
+  }
+}
 main .featured-projects .featured-examples .works .second #secWorkRoll {
   width: 200%;
 }
@@ -439,6 +456,11 @@ main .featured-projects .featured-examples .works .second #secWorkRoll .second {
 @media (max-width: 992px) {
   main .featured-projects .featured-examples .works .third {
     width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  main .featured-projects .featured-examples .works .third {
+    width: 100%;
   }
 }
 main .featured-projects .featured-examples .works .third #trdWorkRoll {
@@ -469,13 +491,14 @@ main .featured-projects .featured-examples .works .pict {
 }
 main .featured-projects .featured-examples .fold-footer {
   background: #19bd9a;
-  height: 100px;
 }
 main .featured-projects .featured-examples .fold-footer .submit {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
   background: url("../img/featured/bg.png") no-repeat 50% 50%;
@@ -486,20 +509,36 @@ main .featured-projects .featured-examples .fold-footer .submit {
 }
 main .featured-projects .featured-examples .fold-footer .submit > p {
   max-width: 1000px;
+  min-width: 260px;
+  margin: 0;
   font-family: "OpenSans";
   color: white;
   font-size: 16pt;
-  margin: 20px 50px 20px 20px;
+  text-align: left;
 }
 main .featured-projects .featured-examples .fold-footer .submit > p span {
   font-weight: bold;
 }
+@media (max-width: 262px) {
+  main .featured-projects .featured-examples .fold-footer .submit > p {
+    display: none;
+  }
+}
 main .featured-projects .featured-examples .fold-footer .submit a {
   border-color: #ffffff;
-  margin-right: 20px;
+  width: 173.31px;
+  height: 40px;
 }
 main .featured-projects .featured-examples .fold-footer .submit a p {
   color: #ffffff;
+}
+main .featured-projects .featured-examples .fold-footer .submit a p {
+  white-space: nowrap;
+}
+@media (max-width: 470px) {
+  main .featured-projects .featured-examples .fold-footer .submit {
+    flex-wrap: wrap;
+  }
 }
 @media (min-width: 1200px) {
   main .featured-projects .featured-examples {
@@ -516,6 +555,12 @@ main .featured-projects .featured-examples .fold-footer .submit a p {
     width: 768px;
   }
 }
+@media (max-width: 768px) {
+  main .featured-projects .featured-examples {
+    width: 100vw;
+    min-width: 300px;
+  }
+}
 main .services .services-main {
   max-width: 1250px;
   padding-left: 60px;
@@ -526,59 +571,76 @@ main .services .services-main {
   display: flex;
   justify-content: space-between;
 }
-main .services .services-main .services-icons {
+main .services .services-main .icons-ans-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+main .services .services-main .icons-ans-content .services-icons {
   margin-right: 20px;
 }
-main .services .services-main .services-icons .icons {
-  height: 263px;
+main .services .services-main .icons-ans-content .services-icons .icons {
+  height: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-main .services .services-main .services-icons .icons .icon-1 {
+main .services .services-main .icons-ans-content .services-icons .icons .icon-1 {
   background-image: url("../img/icons/tools.png");
 }
-main .services .services-main .services-icons .icons .icon-2 {
+main .services .services-main .icons-ans-content .services-icons .icons .icon-2 {
   background-image: url("../img/icons/valik.png");
 }
-main .services .services-main .services-icons .icons .icon-3 {
+main .services .services-main .icons-ans-content .services-icons .icons .icon-3 {
   background-image: url("../img/icons/gamepad.png");
   background-position: 50% 40%;
 }
-main .services .services-main .services-icons .icons .icon-4 {
+main .services .services-main .icons-ans-content .services-icons .icons .icon-4 {
   background-image: url("../img/icons/plug.png");
 }
-main .services .services-main .services-content-output {
+@media (max-width: 390px) {
+  main .services .services-main .icons-ans-content .services-icons .icons {
+    flex-direction: row;
+    width: 263px;
+    height: initial;
+  }
+}
+main .services .services-main .icons-ans-content .services-content-output {
   overflow: hidden;
   height: 263px;
 }
-main .services .services-main .services-content-output #servicesContent {
+main .services .services-main .icons-ans-content .services-content-output #servicesContent {
   height: 400%;
   position: relative;
   display: flex;
   flex-direction: column;
   transition: .5s;
 }
-main .services .services-main .services-content-output #servicesContent .services-content {
+main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content {
   max-width: 412px;
   height: 25%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-main .services .services-main .services-content-output #servicesContent .services-content .services-content-header h2 {
+main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-header h2 {
   margin-top: 0;
 }
-main .services .services-main .services-content-output #servicesContent .services-content .services-content-text-1 p {
+main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-text-1 p {
   font-size: 16px;
 }
-main .services .services-main .services-content-output #servicesContent .services-content .services-content-text-2 p {
+main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-text-2 p {
   margin-bottom: 0;
+}
+@media (max-width: 390px) {
+  main .services .services-main .icons-ans-content {
+    flex-direction: column;
+  }
 }
 main .services .services-main .procents {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-self: center;
   margin-top: 40px;
 }
@@ -586,7 +648,9 @@ main .services .services-main .procents div {
   position: relative;
 }
 main .services .services-main .procents div p {
-  width: 100%;
+  width: 40px;
+  box-sizing: border-box;
+  white-space: nowrap;
   position: relative;
   top: -82px;
   left: 79px;
@@ -613,6 +677,11 @@ main .services .services-main .procents div:nth-child(2) p + p {
 }
 main .services .services-main .procents div:nth-child(3) p + p {
   left: 79px;
+}
+@media (max-width: 630px) {
+  main .services .services-main .procents {
+    flex-direction: column;
+  }
 }
 @media (max-width: 991px) {
   main .services .services-main {
@@ -660,9 +729,13 @@ main .impressed .impressed-outer .impressed-monitor {
   min-width: 400px;
   height: 327px;
   position: relative;
-  right: 60px;
   bottom: 40px;
   z-index: 0;
+}
+@media (max-width: 600px) {
+  main .impressed .impressed-outer .impressed-monitor {
+    display: none;
+  }
 }
 footer {
   border-top: 1px solid red;

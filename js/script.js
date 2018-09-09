@@ -181,4 +181,4 @@ $(document).ready(function(){
 //   }
 // });
 
-alert(window.innerWidth);
+// alert(window.innerWidth);
