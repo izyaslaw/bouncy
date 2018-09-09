@@ -180,3 +180,5 @@ $(document).ready(function(){
 //     //сработает когда пользователь доскроллит к элементу с классом .elem
 //   }
 // });
+
+alert(window.innerWidth);

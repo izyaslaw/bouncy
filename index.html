@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.2">
+	<meta name="viewport" content="height=device-height, initial-scale=1">
 	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -10,9 +10,12 @@
 	<!-- <script src="js/bootstrap.min.js"></script> -->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 	<title>BOUNCY</title>
+	<script>
+		alert(width)
+	</script>
 </head>
 <body style="visibility: hidden"
-onload="setTimeout('document.body.style.visibility = \'visible\'', 0); alert(window.innerWidth)">
+onload="setTimeout('document.body.style.visibility = \'visible\'', 0)">
 <header id="head">
 	<div class="header-content">
 		<div class="logo-menu">
@@ -77,7 +80,7 @@ onload="setTimeout('document.body.style.visibility = \'visible\'', 0); alert(win
 	<div class="header-button">
 		<div class="button-down scrolling">
 			<svg>
-				<a href="#about">
+				<a href="#" onclick="alert(head.style.width)">
 					<circle r="20" cx="50%" cy="50%" fill="#19bd9a" />
 					<line x1="14" y1="16" x2="20" y2="22" stroke="white" stroke-width="2px" />
 					<line x1="20" y1="22" x2="26" y2="16" stroke="white" stroke-width="2px" />
