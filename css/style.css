@@ -132,6 +132,7 @@ header .header-content .logo-menu .menu ul li a:hover {
 }
 header .header-content .logo-menu .menu-button {
   position: fixed;
+  display: block;
   top: 43px;
   right: 20px;
   transition: .8s;

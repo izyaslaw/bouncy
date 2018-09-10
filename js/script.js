@@ -118,13 +118,13 @@ var targetPos = target.offset().top;
 var winHeight = $(window).height();
 var scrollToElem = targetPos - winHeight;
 $(window).scroll(function(){
-  var winScrollTop = $(this).scrollTop();
-  if(winScrollTop > scrollToElem){
-    if (!parseInt(target.attr("working"))) {
-    	target.attr("working", "1")
-    	featuredProjectsPicts();
-    }
-  }
+	var winScrollTop = $(this).scrollTop();
+	if(winScrollTop > scrollToElem){
+		if (!parseInt(target.attr("working"))) {
+			target.attr("working", "1")
+			featuredProjectsPicts();
+		}
+	}
 });
 
 
@@ -182,3 +182,15 @@ $(document).ready(function(){
 // });
 
 // alert(window.innerWidth);
+
+var a = 0;
+window.onscroll = function() {
+	var w = document.documentElement.clientWidth;
+	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+	if ((w < 992) && (scrolled - a > 0)) {
+		menuBtn.style.opacity = "0"
+	} else if ((w < 992) && (scrolled - a < 0)) {
+		menuBtn.style.opacity = "1"
+	}
+	a = scrolled
+}
