@@ -132,7 +132,7 @@ header .header-content .logo-menu .menu ul li a:hover {
 }
 header .header-content .logo-menu .menu-button {
   position: fixed;
-  top: 20px;
+  top: 43px;
   right: 20px;
   transition: .8s;
   z-index: 100;
@@ -234,7 +234,7 @@ main .icon:checked + .icon {
 }
 main .about-us {
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   max-width: 850px;
   margin: auto;
 }
@@ -251,7 +251,19 @@ main .about-us .tib-content-left a {
 main .about-us .tib-content-left a p {
   color: #333b46;
 }
-@media (max-width: 390px) {
+@media (max-width: 450px) {
+  main .about-us .tib-content-left {
+    align-items: center;
+    text-align: justify;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 450px) {
+  main .about-us .tib-content-right {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 450px) {
   main .about-us {
     flex-wrap: wrap;
   }
@@ -262,6 +274,7 @@ main .details-about-us {
 }
 main .details-about-us .dau {
   max-width: 1030px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,14 +325,12 @@ main .details-about-us .dau .dau-content-outer #checkContent .dau-content .conte
   flex-wrap: nowrap;
 }
 main .details-about-us .dau .dau-content-outer #checkContent .dau-content .content p:first-child {
-  min-width: 200px;
   max-width: 400px;
   padding-left: 20px;
   margin-right: 20px;
 }
 main .details-about-us .dau .dau-content-outer #checkContent .dau-content .content p:last-child {
   max-width: 500px;
-  min-width: 300px;
   padding-right: 20px;
 }
 @media (max-width: 700px) {
@@ -494,7 +505,7 @@ main .featured-projects .featured-examples .fold-footer {
 }
 main .featured-projects .featured-examples .fold-footer .submit {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
   padding: 20px;
@@ -519,11 +530,6 @@ main .featured-projects .featured-examples .fold-footer .submit > p {
 main .featured-projects .featured-examples .fold-footer .submit > p span {
   font-weight: bold;
 }
-@media (max-width: 262px) {
-  main .featured-projects .featured-examples .fold-footer .submit > p {
-    display: none;
-  }
-}
 main .featured-projects .featured-examples .fold-footer .submit a {
   border-color: #ffffff;
   width: 173.31px;
@@ -534,6 +540,11 @@ main .featured-projects .featured-examples .fold-footer .submit a p {
 }
 main .featured-projects .featured-examples .fold-footer .submit a p {
   white-space: nowrap;
+}
+@media (max-width: 470px) {
+  main .featured-projects .featured-examples .fold-footer .submit a {
+    margin-top: 10px;
+  }
 }
 @media (max-width: 470px) {
   main .featured-projects .featured-examples .fold-footer .submit {
@@ -603,6 +614,7 @@ main .services .services-main .icons-ans-content .services-icons .icons .icon-4 
     flex-direction: row;
     width: 263px;
     height: initial;
+    margin-bottom: 20px;
   }
 }
 main .services .services-main .icons-ans-content .services-content-output {
@@ -612,6 +624,7 @@ main .services .services-main .icons-ans-content .services-content-output {
 main .services .services-main .icons-ans-content .services-content-output #servicesContent {
   height: 400%;
   position: relative;
+  top: 0;
   display: flex;
   flex-direction: column;
   transition: .5s;
@@ -626,11 +639,26 @@ main .services .services-main .icons-ans-content .services-content-output #servi
 main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-header h2 {
   margin-top: 0;
 }
+@media (max-width: 390px) {
+  main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-header h2 {
+    text-align: center;
+  }
+}
 main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-text-1 p {
   font-size: 16px;
 }
 main .services .services-main .icons-ans-content .services-content-output #servicesContent .services-content .services-content-text-2 p {
   margin-bottom: 0;
+}
+@media (max-width: 490px) and (min-width: 390px) {
+  main .services .services-main .icons-ans-content .services-content-output {
+    height: 386px;
+  }
+}
+@media (max-width: 390px) {
+  main .services .services-main .icons-ans-content .services-content-output {
+    height: 306px;
+  }
 }
 @media (max-width: 390px) {
   main .services .services-main .icons-ans-content {
@@ -732,7 +760,7 @@ main .impressed .impressed-outer .impressed-monitor {
   bottom: 40px;
   z-index: 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   main .impressed .impressed-outer .impressed-monitor {
     display: none;
   }
