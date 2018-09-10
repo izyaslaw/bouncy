@@ -572,6 +572,9 @@ main .featured-projects .featured-examples .fold-footer .submit a p {
     min-width: 300px;
   }
 }
+main .services {
+  background-color: #f3f3f3;
+}
 main .services .services-main {
   max-width: 1250px;
   padding-left: 60px;
